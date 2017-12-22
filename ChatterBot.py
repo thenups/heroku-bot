@@ -16,4 +16,12 @@ api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
 
 # Create a function that tweets
-# CODE GOES HERE
+def tweetOut(tweetCount):
+    api.update_status('This is tweet #{}, but with a timer man!'.format(tweetCount))
+
+counter = 0
+
+for x in range(100):
+    tweetOut(counter)
+    time.sleep(60)
+    counter += 1
