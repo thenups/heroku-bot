@@ -4,10 +4,10 @@ import json
 import time
 
 # Twitter API Keys
-consumer_key = "Ed4RNulN1lp7AbOooHa9STCoU"
-consumer_secret = "P7cUJlmJZq0VaCY0Jg7COliwQqzK0qYEyUF9Y0idx4ujb3ZlW5"
-access_token = "839621358724198402-dzdOsx2WWHrSuBwyNUiqSEnTivHozAZ"
-access_token_secret = "dCZ80uNRbFDjxdU2EckmNiSckdoATach6Q8zb7YYYE5ER"
+consumer_key = "7TlA9v2GbHF3ULBa3IcJMOFHB"
+consumer_secret = "6ONQkhVXU5bP2DVOIpk0ygt6RXSZcrFbRjUDpF73IhfjGgl0qN"
+access_token = "944048582826397696-hFW38T3AEloUaxEZv9er58Ch804HFLJ"
+access_token_secret = "wcfyskPPMvNfwGrN6awRiW1hv1XNP9NYOM2iYHqk22j29"
 
 # Setup Tweepy API Authentication
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -19,9 +19,6 @@ api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 def tweetOut(tweetCount):
     api.update_status('This is tweet #{}, but with a timer man!'.format(tweetCount))
 
-counter = 100
-
 for x in range(100):
-    tweetOut(counter)
+    tweetOut(x)
     time.sleep(60)
-    counter += 1
