@@ -2,6 +2,8 @@
 import tweepy
 import json
 import time
+import time
+
 
 # Twitter API Keys
 consumer_key = "7TlA9v2GbHF3ULBa3IcJMOFHB"
@@ -17,8 +19,12 @@ api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
 # Create a function that tweets
 def tweetOut(tweetCount):
-    api.update_status('This is tweet #{}, but with a timer man!'.format(tweetCount))
+    try:
+        api.update_status('This is tweet #{}, but with a timer man!'.format(tweetCount))
+    except:
+        millis = int(round(time.time() * 1000))
+        api.update_status('Tried to post duplicate {}'.format(millis))
 
-for x in range(100):
+for x in range(5):
     tweetOut(x)
-    time.sleep(60)
+    time.sleep(6)
