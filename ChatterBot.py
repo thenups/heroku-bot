@@ -21,6 +21,6 @@ def tweetOut():
     currentsec = int(time.time())
     api.update_status('It has been {:,} seconds since the epoch (1 Jan 1970)'.format(currentsec))
 
-for x in range(5):
+for x in range(60):
     tweetOut()
-    time.sleep(6)
+    time.sleep(60)
